@@ -1,0 +1,121 @@
+.dialog {
+    max-width: 65%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 3px;
+    position: relative;
+    height: max-content;
+    min-height: 100vh;
+    margin-top: -130px;
+    box-shadow: 1px 1px 0.8 #000;
+    padding: 50px 0;
+
+    .container-dialog {
+        display: flex;
+        height: 100%;
+
+        .container-header {
+            width: 85%;
+            display: flex;
+            height: max-content;
+            justify-content: space-between;
+            margin: auto;
+            gap: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #ddd6d6cc;
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                h4 {
+                    font-size: 30px;
+                    font-weight: 300;
+                    line-height: normal;
+                    color: #898e91;
+                }
+
+                ul {
+                    margin-top: 60px;
+                    color: #595555;
+                    font-size: 20px;
+                    line-height: 25px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+
+                    span {
+                        font-weight: bold;
+                        color: #000;
+                    }
+                }
+            }
+
+            .auth {
+                display: flex;
+                position: relative;
+                justify-content: flex-end;
+
+                img {
+                    width: 270px;
+                }
+
+                .auth-google {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                @media screen and (max-width: 992px) {
+                    justify-content: center;
+                }
+
+                @media screen and (max-width: 768px) {
+                    justify-content: center;
+                }
+
+                @media screen and (max-width: 576px) {
+                    justify-content: center;
+                }
+            }
+
+            @media screen and (max-width: 992px) {
+                flex-direction: column;
+            }
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+            }
+
+            @media screen and (max-width: 576px) {
+                flex-direction: column;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1600px) {
+        max-width: 80%
+    }
+
+    @media screen and (max-width: 1400px) {
+        max-width: 90%
+    }
+
+    @media screen and (max-width: 1200px) {
+        max-width: 90%
+    }
+
+    @media screen and (max-width: 992px) {
+        max-width: 90%
+    }
+
+    @media screen and (max-width: 768px) {
+        max-width: 100%
+    }
+
+    @media screen and (max-width: 576px) {
+        max-width: 100%
+    }
+}

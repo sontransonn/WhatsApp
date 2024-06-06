@@ -1,0 +1,32 @@
+.drawer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    background-color: #111b21;
+
+    .header-drawer {
+        background-color: #202c33;
+        height: 120px;
+        display: flex;
+        align-items: flex-end;
+        padding: 20px;
+        color: #fff;
+
+        .content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .icon {
+                cursor: pointer;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+        }
+    }
+}
