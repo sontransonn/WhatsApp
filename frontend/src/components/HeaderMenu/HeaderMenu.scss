@@ -1,0 +1,32 @@
+.menu__header {
+    height: 60px;
+    display: flex;
+    padding: 10px 18px;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .header-icons {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        justify-content: space-between;
+
+        .icon {
+            color: #9faab2;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .icon-small {
+            font-size: 25px;
+        }
+
+    }
+}

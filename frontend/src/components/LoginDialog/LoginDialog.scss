@@ -1,0 +1,243 @@
+.login__dialog {
+    max-width: 65%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 3px;
+    position: relative;
+    height: max-content;
+    min-height: 100vh;
+    margin-top: -130px;
+    box-shadow: 1px 1px 0.8 #000;
+    padding: 50px 0 0 0;
+    overflow: hidden;
+
+    .login__dialog__container {
+        height: 100%;
+
+        .container__installer {
+            width: 85%;
+            margin: auto;
+            padding: 30px 20px;
+            margin-bottom: 40px;
+            border: 1px solid #ddd6d6cc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            border-radius: 10px;
+
+            img {
+                width: 100px;
+            }
+
+            .installer__content {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .content__title {
+                    font-size: 18px;
+                    font-weight: 400;
+                    word-break: break-word;
+                }
+
+                .content__body {
+                    color: #808486;
+                    font-weight: 400;
+                    font-size: 16px;
+                    word-break: break-word;
+                }
+            }
+
+            .installer__btn-install {
+                background-color: #008069;
+                outline: none;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 30px;
+                font-size: 15px;
+                color: #fff;
+                font-weight: 500;
+                cursor: pointer;
+                white-space: nowrap;
+
+                &:hover {
+                    background-color: #0c725f;
+                }
+            }
+        }
+
+        .container__header {
+            width: 85%;
+            display: flex;
+            height: max-content;
+            justify-content: space-between;
+            margin: auto;
+            gap: 45px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #ddd6d6cc;
+
+            .header__content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                h4 {
+                    font-size: 28px;
+                    font-weight: 300;
+                    line-height: normal;
+                    color: #898e91;
+                }
+
+                ul {
+                    margin-top: 45px;
+                    color: #817d7d;
+                    font-size: 18px;
+                    line-height: 25px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 25px;
+
+                    li {
+
+                        span {
+                            font-weight: bold;
+                            color: #6b6969;
+                            position: relative;
+
+                            .icon {
+                                position: relative;
+                                top: 5px;
+                                margin: 0 7px;
+                                cursor: pointer;
+                                color: #888c8f;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .header__login {
+                display: flex;
+                position: relative;
+                justify-content: flex-end;
+
+                img {
+                    width: 270px;
+                }
+
+                .login-google {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                @media screen and (max-width: 992px) {
+                    justify-content: center;
+                }
+
+                @media screen and (max-width: 768px) {
+                    justify-content: center;
+                }
+
+                @media screen and (max-width: 576px) {
+                    justify-content: center;
+                }
+            }
+
+            @media screen and (max-width: 992px) {
+                flex-direction: column;
+            }
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+            }
+
+            @media screen and (max-width: 576px) {
+                flex-direction: column;
+            }
+        }
+
+        .container__phone {
+            width: 85%;
+            margin: auto;
+            padding: 40px 0;
+            color: #30967e;
+            font-weight: 500;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .container__instruction {
+            width: 100%;
+            margin: auto;
+            background-color: #f9f9fa;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            padding: 30px 0;
+
+            .instruction-title {
+                text-align: center;
+
+                h5 {
+                    font-size: 28px;
+                    font-weight: 300;
+                    color: #6e7376;
+                    margin-bottom: 15px;
+                }
+
+                a {
+                    font-size: 18px;
+                    color: #30967e;
+                    cursor: pointer;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .instruction-video {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                video {
+                    width: 80%;
+
+                    @media screen and (max-width: 768px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1600px) {
+        max-width: 80%
+    }
+
+    @media screen and (max-width: 1400px) {
+        max-width: 90%
+    }
+
+    @media screen and (max-width: 1200px) {
+        max-width: 90%
+    }
+
+    @media screen and (max-width: 992px) {
+        max-width: 90%
+    }
+
+    @media screen and (max-width: 768px) {
+        max-width: 100%
+    }
+
+    @media screen and (max-width: 576px) {
+        max-width: 100%
+    }
+}

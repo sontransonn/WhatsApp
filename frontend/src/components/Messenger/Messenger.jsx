@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import "./Messenger.scss"
 
-import { AccountContext } from '../../context/AccountProvider'
+import ChatDialog from '../ChatDialog/ChatDialog'
+import LoginDialog from '../LoginDialog/LoginDialog'
 
-import ChatDialog from '../Chat/ChatDialog'
-import LoginDialog from '../Account/LoginDialog'
+import { AccountContext } from '../../context/AccountProvider'
 
 import whatsapp from "../../assets/images/whatsapp.webp"
 
@@ -16,19 +16,19 @@ const Messenger = () => {
         <div className="messenger">
             {
                 account ?
-                    <>
+                    <div className='messenger__chat'>
                         <ChatDialog />
-                    </>
+                    </div>
                     :
-                    <>
-                        <div className="login_header">
-                            <div className="login_header-title">
+                    <div className='messenger__login'>
+                        <div className="login__header">
+                            <div className="header-title">
                                 <img src={whatsapp} alt="" />
                                 <h5>WHATSAPP WEB</h5>
                             </div>
                         </div>
                         <LoginDialog />
-                    </>
+                    </div>
             }
         </div>
     )
