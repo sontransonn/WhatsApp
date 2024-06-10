@@ -1,0 +1,50 @@
+.message {
+    display: flex;
+    width: fit-content;
+    color: #fff;
+    width: 100%;
+
+    .sender {
+        background-color: #005c4b;
+        padding: 10px;
+        border-radius: 8px;
+        display: flex;
+        margin-left: auto;
+        max-width: 60%;
+
+        .text {
+            font-size: 14px;
+            padding: 0 25px 0 5px;
+            word-break: break-word;
+        }
+
+        .time {
+            font-size: 10px;
+            color: #919191;
+            margin-top: 6px;
+            word-break: keep-all;
+            margin-top: auto;
+        }
+    }
+
+    .receiver {
+        background-color: #202c33;
+        padding: 10px;
+        border-radius: 8px;
+        display: flex;
+
+        .text {
+            font-size: 14px;
+            padding: 0 25px 0 5px;
+            word-break: break-word;
+        }
+
+        .time {
+            font-size: 10px;
+            color: #919191;
+            margin-top: 6px;
+            word-break: keep-all;
+            margin-top: auto;
+        }
+    }
+}

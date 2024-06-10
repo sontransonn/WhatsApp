@@ -1,0 +1,17 @@
+.messages {
+    background-image: url("../../../../assets/images/bgImg.webp");
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+
+    .list-message {
+        flex: 1;
+        padding: 1px 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        overflow: scroll;
+    }
+}

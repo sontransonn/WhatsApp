@@ -1,0 +1,37 @@
+.footer {
+    height: 65px;
+    background-color: #202c33;
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    gap: 15px;
+
+    .icon {
+        color: #8696a0;
+        font-size: 30px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    label {
+        width: 30px;
+        height: 30px;
+    }
+
+    .search {
+        flex: 1;
+        align-self: stretch;
+
+        input {
+            width: 100%;
+            height: 100%;
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            padding: 0 20px;
+            background-color: #354149;
+            color: #fff;
+            font-size: 16px;
+        }
+    }
+}

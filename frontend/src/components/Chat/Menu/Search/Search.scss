@@ -1,6 +1,6 @@
 .search-menu {
     background-color: #151d22;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
     padding: 10px 18px;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@
 
         .select-item {
             background-color: #202c33;
-            padding: 10px;
+            padding: 10px 15px;
             border-radius: 20px;
             color: #939992;
             cursor: pointer;

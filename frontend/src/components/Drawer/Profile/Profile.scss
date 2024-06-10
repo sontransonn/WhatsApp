@@ -23,8 +23,19 @@
             margin-bottom: 25px;
         }
 
-        span {
-            color: #fff;
+        .info-edit {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            span {
+                color: #fff;
+            }
+
+            .icon {
+                color: #a1b2b2;
+                cursor: pointer;
+            }
         }
     }
 
@@ -46,9 +57,20 @@
             margin-bottom: 25px;
         }
 
-        p {
-            color: #a1b2b2;
-            border: none;
+        .introduce-edit {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            p {
+                color: #a1b2b2;
+                border: none;
+            }
+
+            .icon {
+                color: #a1b2b2;
+                cursor: pointer;
+            }
         }
     }
 }

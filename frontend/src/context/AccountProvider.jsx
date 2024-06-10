@@ -4,6 +4,7 @@ import {
     useEffect,
     useRef
 } from 'react';
+import { io } from 'socket.io-client';
 
 export const AccountContext = createContext(null);
 
@@ -15,6 +16,12 @@ const AccountProvider = ({ children }) => {
     const [activeUsers, setActiveUsers] = useState([]);
     const [newMessageFlag, setNewMessageFlag] = useState(false);
 
+    const socket = useRef();
+
+    useEffect(() => {
+        socket.current = io('ws://localhost:5000');
+    }, [])
+
     return (
         <AccountContext.Provider value={{
             account,
@@ -23,6 +30,7 @@ const AccountProvider = ({ children }) => {
             setShowloginButton,
             showlogoutButton,
             setShowlogoutButton,
+            socket,
             activeUsers,
             setActiveUsers,
             newMessageFlag,

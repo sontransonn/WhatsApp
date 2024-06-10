@@ -3,7 +3,7 @@ import "./Search.scss"
 
 import { Search as SearchIcon } from '@mui/icons-material';
 
-const Search = () => {
+const Search = ({ setText }) => {
     return (
         <div className="search-menu">
             <div className="search-input">
@@ -12,6 +12,7 @@ const Search = () => {
                     type="text"
                     placeholder='Tìm kiếm'
                     className='input'
+                    onChange={(e) => setText(e.target.value)}
                 />
             </div>
 

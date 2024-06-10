@@ -13,7 +13,7 @@ const Messenger = () => {
     const { account } = useContext(AccountContext);
 
     return (
-        <div className="container">
+        <div className="messenger">
             {
                 account ?
                     <>
@@ -21,8 +21,8 @@ const Messenger = () => {
                     </>
                     :
                     <>
-                        <div className="header">
-                            <div className="landing-header">
+                        <div className="login_header">
+                            <div className="login_header-title">
                                 <img src={whatsapp} alt="" />
                                 <h5>WHATSAPP WEB</h5>
                             </div>

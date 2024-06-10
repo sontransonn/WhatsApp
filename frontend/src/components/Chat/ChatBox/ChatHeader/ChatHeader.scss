@@ -1,0 +1,43 @@
+.chatHeader {
+    display: flex;
+    height: 60px;
+    padding: 10px 25px;
+    align-items: center;
+    gap: 25px;
+
+    img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .status {
+        color: #fff;
+
+        h5 {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        h6 {
+            color: #a0abb2;
+            font-size: 12px;
+            font-weight: 400;
+        }
+    }
+
+    .icons {
+        margin-left: auto;
+        color: #a0abb2;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .icon {
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
+}
