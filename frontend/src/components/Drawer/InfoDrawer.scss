@@ -1,13 +1,13 @@
-.drawer {
+.info-drawer {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 5;
+    z-index: 15;
     background-color: #111b21;
 
-    .header-drawer {
+    .info-drawer__header {
         background-color: #202c33;
         height: 120px;
         display: flex;
@@ -15,10 +15,11 @@
         padding: 20px;
         color: #fff;
 
-        .content {
+        .info-drawer__header__content {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 30px;
+            color: #d4dee0;
 
             .icon {
                 cursor: pointer;
@@ -26,6 +27,7 @@
 
             h1 {
                 font-size: 20px;
+                font-weight: 450;
             }
         }
     }

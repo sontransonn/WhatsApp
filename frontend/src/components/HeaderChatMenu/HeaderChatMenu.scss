@@ -12,9 +12,9 @@
         cursor: pointer;
     }
 
-    .header-icons {
+    .menu__header__icons {
         display: flex;
-        gap: 25px;
+        gap: 30px;
         align-items: center;
         justify-content: space-between;
 
@@ -24,9 +24,16 @@
             cursor: pointer;
         }
 
-        .icon-small {
-            font-size: 25px;
-        }
+        .menu__header__icons__options {
+            position: relative;
+            display: flex;
+            align-items: center;
 
+            .icon {
+                color: #9faab2;
+                font-size: 30px;
+                cursor: pointer;
+            }
+        }
     }
 }

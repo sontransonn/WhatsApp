@@ -11,12 +11,12 @@ const InfoDrawer = ({ setOpenDrawer }) => {
   };
 
   return (
-    <div className="drawer">
-      <div className="header-drawer">
-        <div className="content">
+    <div className="info-drawer">
+      <div className="info-drawer__header">
+        <div className="info-drawer__header__content">
           <ArrowBack
             className='icon'
-            onClick={() => setOpenDrawer(false)}
+            onClick={handleClose}
           />
           <h1>Trang cá nhân</h1>
         </div>

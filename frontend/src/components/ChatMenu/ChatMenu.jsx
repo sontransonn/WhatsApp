@@ -1,19 +1,28 @@
 import React, { useState } from 'react'
 import "./ChatMenu.scss"
 
-import HeaderMenu from '../HeaderMenu/HeaderMenu'
-import SearchMenu from '../SearchMenu/SearchMenu'
-import ConversationsMenu from '../ConversationsMenu/ConversationsMenu'
+import HeaderChatMenu from '../HeaderChatMenu/HeaderChatMenu'
+import SearchChatMenu from '../SearchChatMenu/SearchChatMenu'
+import ConversationsChatMenu from '../ConversationsChatMenu/ConversationsChatMenu'
 
 const ChatMenu = () => {
 
     const [text, setText] = useState('');
+    const [selectOption, setSelectOption] = useState(1)
 
     return (
-        <div className="menu">
-            <HeaderMenu />
-            <SearchMenu setText={setText} />
-            <ConversationsMenu text={text} />
+        <div className="chat-menu">
+            <HeaderChatMenu />
+            <SearchChatMenu
+                text={text}
+                setText={setText}
+                selectOption={selectOption}
+                setSelectOption={setSelectOption}
+            />
+            <ConversationsChatMenu
+                selectOption={selectOption}
+                text={text}
+            />
         </div>
     )
 }

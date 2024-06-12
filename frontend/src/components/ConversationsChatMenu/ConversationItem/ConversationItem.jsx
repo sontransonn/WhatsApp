@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import "./ConversationItem.scss"
 
+import { FaChevronDown } from "react-icons/fa";
+
 import { AccountContext } from '../../../context/AccountProvider';
 import { UserContext } from '../../../context/UserProvider';
 
@@ -31,20 +33,23 @@ const ConversationItem = ({ user }) => {
 
     return (
         <div
-            className="conversation"
+            className="conversation-item"
             onClick={() => getUser()}
         >
             <img src={user.picture} alt="" />
-            <div className="content">
-                <div className="name-message">
+            <div className="conversation-item__content">
+                <div className="conversation-item__content__name-date">
                     <h4>{user.name}</h4>
                     {
                         message?.text &&
                         <p>{formatDate(message?.timestamp)}</p>
                     }
                 </div>
-                <div className="text-message">
+                <div className="conversation-item__content__text-message">
                     <p>{message?.text?.includes('localhost') ? 'media' : message.text}</p>
+                    <FaChevronDown
+                        className='conversation-item__content__text-message__icon'
+                    />
                 </div>
             </div>
         </div>

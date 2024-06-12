@@ -1,4 +1,4 @@
-.emtyChat {
+.empty-chat {
     height: 100%;
     text-align: center;
     display: flex;
@@ -7,19 +7,30 @@
     justify-content: center;
     gap: 35px;
     position: relative;
+    padding: 0 25px;
 
     img {
-        width: 400px;
+        width: 380px;
     }
 
     h5 {
         font-size: 32px;
         color: #a1b2b2;
         font-weight: 300;
+        word-break: break-word;
+
+        @media screen and (max-width: 768px) {
+            max-width: 450px;
+        }
     }
 
     p {
         color: #a1b2b2;
+        word-break: break-word;
+
+        @media screen and (max-width: 768px) {
+            max-width: 450px;
+        }
     }
 
     button {
@@ -37,10 +48,17 @@
         }
     }
 
-    span {
+    .empty-chat__note {
         position: absolute;
         bottom: 20px;
-        color: #929c9c;
+        color: #8d9595;
         font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .empty-chat__note__icon {
+            font-size: 14px;
+        }
     }
 }

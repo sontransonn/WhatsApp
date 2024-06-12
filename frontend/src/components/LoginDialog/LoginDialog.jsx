@@ -27,6 +27,7 @@ const LoginDialog = () => {
     const onLoginSuccess = async (res) => {
         let decoded = jwtDecode(res.credential);
         setAccount(decoded)
+        localStorage.setItem("user", JSON.stringify(decoded))
         await addUser(decoded);
     }
 
@@ -35,23 +36,23 @@ const LoginDialog = () => {
     };
 
     return (
-        <div className="login__dialog">
-            <div className="login__dialog__container">
-                <div className="container__installer">
+        <div className="login-dialog">
+            <div className="login-dialog__container">
+                <div className="login-dialog__container__installer">
                     <img src={imageEmpty} alt="" />
-                    <div className="installer__content">
-                        <p className='content__title'>Tải xuống WhatsApp cho Windows</p>
-                        <p className='content__body'>
+                    <div className="login-dialog__container__installer__content">
+                        <p className='login-dialog__container__installer__content__title'>Tải xuống WhatsApp cho Windows</p>
+                        <p className='login-dialog__container__installer__content__body'>
                             Tận hưởng tính năng gọi điện, chia sẻ màn hình và
                             trải nghiệm nhanh hơn với ứng dụng cho Windows mới.
                         </p>
                     </div>
-                    <button className="installer__btn-install">
+                    <button className="login-dialog__container__installer__btn-install">
                         Tải ứng dụng
                     </button>
                 </div>
-                <div className="container__header">
-                    <div className="header__content">
+                <div className="login-dialog__container__header">
+                    <div className="login-dialog__container__header__content">
                         <h4>Sử dụng WhatsApp trên máy tính của bạn</h4>
                         <ul>
                             <li>1. Mở WhatsApp trên điện thoại</li>
@@ -63,9 +64,9 @@ const LoginDialog = () => {
                             <li>4. Hướng điện thoại vào màn hình này để quét mã QR</li>
                         </ul>
                     </div>
-                    <div className="header__login">
+                    <div className="login-dialog__container__header__login">
                         <img src={qrCodeImage} alt="" />
-                        <div className="login-google">
+                        <div className="login-dialog__container__header__login-google">
                             <GoogleLogin
                                 buttonText=""
                                 onSuccess={onLoginSuccess}
@@ -74,18 +75,18 @@ const LoginDialog = () => {
                         </div>
                     </div>
                 </div>
-                <p className="container__phone">
+                <p className="login-dialog__container__phone">
                     Liên kết thông qua số điện thoại
                 </p>
-                <div className="container__instruction">
-                    <div className="instruction-title">
+                <div className="login-dialog__container__instruction">
+                    <div className="login-dialog__container__instruction_title">
                         <h5>HƯỚNG DẪN</h5>
                         <a
                             href='https://faq.whatsapp.com/1317564962315842/?cms_platform=web&lang=vi'
                             target='_blank'
                         >Bạn cần trợ giúp để bắt đầu?</a>
                     </div>
-                    <div className="instruction-video">
+                    <div className="login-dialog__container__instruction_video">
                         <video controls>
                             <source src={instructionVideo} />
                         </video>

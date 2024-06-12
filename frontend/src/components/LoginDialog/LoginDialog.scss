@@ -1,4 +1,4 @@
-.login__dialog {
+.login-dialog {
     max-width: 65%;
     margin: auto;
     background-color: #fff;
@@ -11,10 +11,10 @@
     padding: 50px 0 0 0;
     overflow: hidden;
 
-    .login__dialog__container {
+    .login-dialog__container {
         height: 100%;
 
-        .container__installer {
+        .login-dialog__container__installer {
             width: 85%;
             margin: auto;
             padding: 30px 20px;
@@ -30,18 +30,18 @@
                 width: 100px;
             }
 
-            .installer__content {
+            .login-dialog__container__installer__content {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
 
-                .content__title {
+                .login-dialog__container__installer__content__title {
                     font-size: 18px;
                     font-weight: 400;
                     word-break: break-word;
                 }
 
-                .content__body {
+                .login-dialog__container__installer__content__body {
                     color: #808486;
                     font-weight: 400;
                     font-size: 16px;
@@ -49,7 +49,7 @@
                 }
             }
 
-            .installer__btn-install {
+            .login-dialog__container__installer__btn-install {
                 background-color: #008069;
                 outline: none;
                 border: none;
@@ -67,7 +67,7 @@
             }
         }
 
-        .container__header {
+        .login-dialog__container__header {
             width: 85%;
             display: flex;
             height: max-content;
@@ -77,7 +77,7 @@
             padding-bottom: 50px;
             border-bottom: 1px solid #ddd6d6cc;
 
-            .header__content {
+            .login-dialog__container__header__content {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -117,7 +117,7 @@
                 }
             }
 
-            .header__login {
+            .login-dialog__container__header__login {
                 display: flex;
                 position: relative;
                 justify-content: flex-end;
@@ -126,7 +126,7 @@
                     width: 270px;
                 }
 
-                .login-google {
+                .login-dialog__container__header__login-google {
                     position: absolute;
                     top: 50%;
                     left: 50%;
@@ -159,7 +159,7 @@
             }
         }
 
-        .container__phone {
+        .login-dialog__container__phone {
             width: 85%;
             margin: auto;
             padding: 40px 0;
@@ -169,7 +169,7 @@
             cursor: pointer;
         }
 
-        .container__instruction {
+        .login-dialog__container__instruction {
             width: 100%;
             margin: auto;
             background-color: #f9f9fa;
@@ -180,7 +180,7 @@
             gap: 50px;
             padding: 30px 0;
 
-            .instruction-title {
+            .login-dialog__container__instruction_title {
                 text-align: center;
 
                 h5 {
@@ -201,7 +201,7 @@
                 }
             }
 
-            .instruction-video {
+            .login-dialog__container__instruction_video {
                 width: 100%;
                 display: flex;
                 justify-content: center;

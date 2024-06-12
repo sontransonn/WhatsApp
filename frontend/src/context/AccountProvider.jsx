@@ -19,6 +19,13 @@ const AccountProvider = ({ children }) => {
     const socket = useRef();
 
     useEffect(() => {
+        const user = localStorage.getItem("user")
+        if (user) {
+            setAccount(JSON.parse(user))
+        }
+    }, [])
+
+    useEffect(() => {
         socket.current = io('ws://localhost:5000');
     }, [])
 

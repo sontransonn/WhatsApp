@@ -3,10 +3,23 @@ import "./Footer.scss"
 
 import { EmojiEmotions, Mic } from '@mui/icons-material';
 import AddIcon from '@mui/icons-material/Add';
+import { MdMood } from "react-icons/md";
+import { IoClose } from "react-icons/io5";
 
 import uploadFile from '../../services/file/uploadFile';
 
-const Footer = ({ sendText, value, setValue, setFile, file, setImage }) => {
+const Footer = (props) => {
+
+    const {
+        sendText,
+        value,
+        setValue,
+        setFile,
+        file,
+        setImage,
+        openEmoji,
+        setOpenEmoji
+    } = props
 
     const [openOptions, setOpenOptions] = useState(true)
 
@@ -30,9 +43,27 @@ const Footer = ({ sendText, value, setValue, setFile, file, setImage }) => {
         setFile(e.target.files[0]);
     }
 
+    const handleOpenEmoji = () => {
+        setOpenEmoji(true)
+    }
+
+    const handleCloseEmoji = () => {
+        setOpenEmoji(false)
+    }
+
     return (
         <div className='footer'>
-            <EmojiEmotions className='icon' />
+            {openEmoji
+                &&
+                <IoClose
+                    className='icon'
+                    onClick={handleCloseEmoji}
+                />
+            }
+            <MdMood
+                className={openEmoji ? "icon--selected" : "icon"}
+                onClick={handleOpenEmoji}
+            />
             <label htmlFor="fileInput">
                 <AddIcon
                     className='icon'

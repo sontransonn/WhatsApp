@@ -1,0 +1,33 @@
+.menu-options {
+    position: absolute;
+    width: 250px;
+    right: 0;
+    top: 115%;
+    background-color: #233138;
+    padding: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+
+    .menu-options__item {
+        color: #beb8b1;
+        cursor: pointer;
+        padding: 15px 25px;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .menu-options__item--install {
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        color: #beb8b1;
+        cursor: pointer;
+        padding: 15px 25px;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+}

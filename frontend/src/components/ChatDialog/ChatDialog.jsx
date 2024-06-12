@@ -11,12 +11,12 @@ const ChatDialog = () => {
     const { person } = useContext(UserContext);
 
     return (
-        <div className="chat__dialog">
-            <div className='chat__dialog__container'>
-                <div className="container__chatmenu">
+        <div className="chat-dialog">
+            <div className='chat-dialog__container'>
+                <div className="chat-dialog__container__chatmenu">
                     <ChatMenu />
                 </div>
-                <div className="container__chatbox">
+                <div className="chat-dialog__container__chatbox">
                     {
                         Object.keys(person).length ? <ChatBox /> : <EmptyChatBox />
                     }

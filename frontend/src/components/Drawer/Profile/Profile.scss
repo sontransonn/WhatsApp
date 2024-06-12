@@ -1,6 +1,6 @@
 .profile {
 
-    .img-container {
+    .profile__img {
         display: flex;
         justify-content: center;
         padding: 30px;
@@ -12,7 +12,7 @@
         }
     }
 
-    .info {
+    .profile__info {
         padding: 15px 30px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.14);
 
@@ -23,7 +23,7 @@
             margin-bottom: 25px;
         }
 
-        .info-edit {
+        .profile__info__edit {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -32,14 +32,14 @@
                 color: #fff;
             }
 
-            .icon {
+            .profile__info__edit__icon {
                 color: #a1b2b2;
                 cursor: pointer;
             }
         }
     }
 
-    .notice {
+    .profile__notice {
         font-size: 16px;
         padding: 20px 30px;
         color: #a1b2b2;
@@ -47,7 +47,7 @@
         padding-bottom: 30px;
     }
 
-    .introduce {
+    .profile__introduce {
         padding: 15px 30px;
 
         h6 {
@@ -57,17 +57,17 @@
             margin-bottom: 25px;
         }
 
-        .introduce-edit {
+        .profile__introduce__edit {
             display: flex;
             align-items: center;
             justify-content: space-between;
 
             p {
-                color: #a1b2b2;
+                color: #fff;
                 border: none;
             }
 
-            .icon {
+            .profile__introduce__edit__icon {
                 color: #a1b2b2;
                 cursor: pointer;
             }

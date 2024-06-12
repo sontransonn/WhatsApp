@@ -25,9 +25,12 @@ const ChatBox = () => {
     }, [person.sub])
 
     return (
-        <div className='chatBox'>
+        <div className='chat-box'>
             <HeaderChatBox person={person} />
-            <MessagesChatBox person={person} conversation={conversation} />
+            <MessagesChatBox
+                person={person}
+                conversation={conversation}
+            />
         </div>
     )
 }

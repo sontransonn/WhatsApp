@@ -21,8 +21,8 @@ const Messenger = () => {
                     </div>
                     :
                     <div className='messenger__login'>
-                        <div className="login__header">
-                            <div className="header-title">
+                        <div className="messenger__login__header">
+                            <div className="messenger__login__header__title">
                                 <img src={whatsapp} alt="" />
                                 <h5>WHATSAPP WEB</h5>
                             </div>

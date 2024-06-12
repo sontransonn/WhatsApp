@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import "./ConversationsMenu.scss"
+import "./ConversationsChatMenu.scss"
 
 import ConversationItem from './ConversationItem/ConversationItem';
 
@@ -7,7 +7,7 @@ import { AccountContext } from "../../context/AccountProvider"
 
 import getUsers from '../../services/user/getUsers';
 
-const ConversationsMenu = ({ text }) => {
+const ConversationsChatMenu = ({ selectOption, text }) => {
     const [users, setUsers] = useState([]);
 
     const {
@@ -34,17 +34,15 @@ const ConversationsMenu = ({ text }) => {
     }, [account])
 
     return (
-        <div className="conversations">
+        <div className="chat-menu__conversations">
             {
                 users && users.map((user, index) => (
                     user.sub !== account.sub &&
-                    <>
-                        <ConversationItem user={user} />
-                    </>
+                    <ConversationItem user={user} key={index} />
                 ))
             }
         </div>
     )
 }
 
-export default ConversationsMenu
+export default ConversationsChatMenu

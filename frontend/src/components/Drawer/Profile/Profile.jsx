@@ -11,25 +11,25 @@ const Profile = () => {
 
     return (
         <div className='profile'>
-            <div className="img-container">
+            <div className="profile__img">
                 <img src={account.picture} alt="" />
             </div>
-            <div className="info">
+            <div className="profile__info">
                 <h6>Tên bạn</h6>
-                <div className="info-edit">
+                <div className="profile__info__edit">
                     <span>{account.name}</span>
-                    <EditIcon className='icon' />
+                    <EditIcon className='profile__info__edit__icon' />
                 </div>
             </div>
-            <p className='notice'>
+            <p className='profile__notice'>
                 Đây không phải là tên người dùng hoặc mã PIN của bạn. Tên  này sẽ
                 hiển thị với những người liên hệ khác trên WhatsApp.
             </p>
-            <div className="introduce">
+            <div className="profile__introduce">
                 <h6>Giới thiệu</h6>
-                <div className="introduce-edit">
+                <div className="profile__introduce__edit">
                     <p>Xin chào! Mình đang dùng WhatsApp nè.</p>
-                    <EditIcon className='icon' />
+                    <EditIcon className='profile__introduce__edit__icon' />
                 </div>
             </div>
         </div>

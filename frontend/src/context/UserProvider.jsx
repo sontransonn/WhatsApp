@@ -6,7 +6,12 @@ const UserProvider = ({ children }) => {
     const [person, setPerson] = useState({});
 
     return (
-        <UserContext.Provider value={{ person, setPerson }}>
+        <UserContext.Provider
+            value={{
+                person,
+                setPerson
+            }}
+        >
             {children}
         </UserContext.Provider>
     )
