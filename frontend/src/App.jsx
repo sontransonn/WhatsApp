@@ -1,11 +1,36 @@
-import './App.css'
+import React from 'react'
+import './App.scss'
 
-import Messenger from './components/Messenger/Messenger'
+import useAccount from './hooks/useAccount';
+
+import ChatDialog from "./components/ChatDialog/ChatDialog"
+import LoginDialog from './components/LoginDialog/LoginDialog'
+
+import whatsapp from "./assets/images/whatsapp.webp"
 
 function App() {
 
+  const { currentAccount } = useAccount()
+
   return (
-    <Messenger />
+    <div className='whatsapp'>
+      {
+        currentAccount ?
+          <div className='messenger__chat'>
+            <ChatDialog />
+          </div>
+          :
+          <div className='whatsapp__login-container'>
+            <div className="whatsapp__login-container__header">
+              <div className="whatsapp__login-container__header__title">
+                <img src={whatsapp} alt="" />
+                <h5>WHATSAPP WEB</h5>
+              </div>
+            </div>
+            <LoginDialog />
+          </div>
+      }
+    </div>
   )
 }
 

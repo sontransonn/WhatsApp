@@ -1,0 +1,111 @@
+.info-drawer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 15;
+    background-color: #111b21;
+
+    .info-drawer__header {
+        background-color: #202c33;
+        height: 120px;
+        display: flex;
+        align-items: flex-end;
+        padding: 20px;
+        color: #fff;
+
+        .info-drawer__header__content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            color: #d4dee0;
+
+            .icon {
+                cursor: pointer;
+            }
+
+            h1 {
+                font-size: 20px;
+                font-weight: 450;
+            }
+        }
+    }
+
+    .profile {
+
+        .profile__img {
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+
+            img {
+                width: 200px;
+                border-radius: 50%;
+            }
+        }
+
+        .profile__info {
+            padding: 15px 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+
+            h6 {
+                color: #12865d;
+                font-size: 18px;
+                font-weight: 400;
+                margin-bottom: 25px;
+            }
+
+            .profile__info__edit {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                span {
+                    color: #fff;
+                }
+
+                .profile__info__edit__icon {
+                    color: #a1b2b2;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .profile__notice {
+            font-size: 16px;
+            padding: 20px 30px;
+            color: #a1b2b2;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+            padding-bottom: 30px;
+        }
+
+        .profile__introduce {
+            padding: 15px 30px;
+
+            h6 {
+                color: #12865d;
+                font-size: 18px;
+                font-weight: 400;
+                margin-bottom: 25px;
+            }
+
+            .profile__introduce__edit {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                p {
+                    color: #fff;
+                    border: none;
+                }
+
+                .profile__introduce__edit__icon {
+                    color: #a1b2b2;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

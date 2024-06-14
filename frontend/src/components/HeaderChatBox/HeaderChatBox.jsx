@@ -1,21 +1,21 @@
 import React, { useContext, useState } from 'react'
+import { useSelector } from 'react-redux';
 import "./HeaderChatBox.scss"
 
+import { FaCircle } from "react-icons/fa";
 import { Search, MoreVert } from '@mui/icons-material';
 
 import HeaderChatBoxOptions from './HeaderChatBoxOptions/HeaderChatBoxOptions';
 
-import { AccountContext } from "../../context/AccountProvider"
-
-import { defaultProfilePicture } from "../../constants/data"
-
-const HeaderChatBox = ({ person }) => {
+const HeaderChatBox = ({ chattingAccount }) => {
 
     const [openOptions, setOpenOptions] = useState(false)
 
-    const url = person?.picture || defaultProfilePicture;
+    const {
+        activeAccounts
+    } = useSelector(state => state.account)
 
-    const { activeUsers } = useContext(AccountContext);
+    const url = chattingAccount?.picture
 
     const handleOpenOptions = () => {
         setOpenOptions((prev) => !prev)
@@ -23,10 +23,13 @@ const HeaderChatBox = ({ person }) => {
 
     return (
         <div className='chat-box__header'>
-            <img src={url} alt="" />
+            <div className="chat-box__header__avatar">
+                <img src={url} alt="" />
+                {activeAccounts?.find(account => account.sub === chattingAccount.sub) ? <FaCircle className='icon' /> : <FaCircle className='icon--offline' />}
+            </div>
             <div className="chat-box__header__name-status">
-                <h5>{person.name}</h5>
-                <h6>{activeUsers?.find(user => user.sub === person.sub) ? 'Online' : 'Offline'}</h6>
+                <h5>{chattingAccount.name}</h5>
+                <p>Nhắn tin cho {chattingAccount.name}</p>
             </div>
             <div className="chat-box__header__icons">
                 <Search className='icon' />

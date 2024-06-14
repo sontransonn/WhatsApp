@@ -1,12 +1,15 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import "./MessagesChatBox.scss"
+
+import {
+    setNewMessageFlag
+} from "../../redux/slices/messageSlice"
 
 import EmojiPicker from 'emoji-picker-react';
 
-import Footer from '../FooterChatBox/Footer'
+import InputChatBox from '../InputChatBox/InputChatBox'
 import Message from './MessageItem/Message'
-
-import { AccountContext } from "../../context/AccountProvider"
 
 import newMessage from '../../services/message/newMessage'
 import getMessages from '../../services/message/getMessages'
@@ -50,7 +53,7 @@ const categories = [
     },
 ]
 
-const MessagesChatBox = ({ person, conversation }) => {
+const MessagesChatBox = ({ conversation }) => {
 
     const [messages, setMessages] = useState([]);
     const [incomingMessage, setIncomingMessage] = useState(null);
@@ -61,23 +64,26 @@ const MessagesChatBox = ({ person, conversation }) => {
 
     const scrollRef = useRef();
 
+    const dispatch = useDispatch();
     const {
-        account,
-        socket,
-        newMessageFlag,
-        setNewMessageFlag
-    } = useContext(AccountContext);
+        currentAccount,
+        chattingAccount
+    } = useSelector(state => state.account)
 
-    const receiverId = conversation?.members?.find(member => member !== account.sub);
+    const {
+        newMessageFlag
+    } = useSelector(state => state.message)
 
-    useEffect(() => {
-        socket.current.on('getMessage', data => {
-            setIncomingMessage({
-                ...data,
-                createdAt: Date.now()
-            })
-        })
-    }, []);
+    const receiverId = conversation?.members?.find(member => member !== currentAccount.sub);
+
+    // useEffect(() => {
+    //     socket.current.on('getMessage', data => {
+    //         setIncomingMessage({
+    //             ...data,
+    //             createdAt: Date.now()
+    //         })
+    //     })
+    // }, []);
 
     useEffect(() => {
         const getMessageDetails = async () => {
@@ -85,17 +91,17 @@ const MessagesChatBox = ({ person, conversation }) => {
             setMessages(data);
         }
         getMessageDetails()
-    }, [conversation?._id, person._id, newMessageFlag])
+    }, [conversation?._id, chattingAccount._id, newMessageFlag])
 
     useEffect(() => {
         scrollRef.current?.scrollIntoView({ transition: "smooth" })
     }, [messages, openEmoji]);
 
-    useEffect(() => {
-        incomingMessage && conversation?.members?.includes(incomingMessage.senderId) &&
-            setMessages((prev) => [...prev, incomingMessage]);
+    // useEffect(() => {
+    //     incomingMessage && conversation?.members?.includes(incomingMessage.senderId) &&
+    //         setMessages((prev) => [...prev, incomingMessage]);
 
-    }, [incomingMessage, conversation]);
+    // }, [incomingMessage, conversation]);
 
     const sendText = async (e) => {
         if (!value) return;
@@ -105,7 +111,7 @@ const MessagesChatBox = ({ person, conversation }) => {
 
             if (!file) {
                 message = {
-                    senderId: account.sub,
+                    senderId: currentAccount.sub,
                     receiverId: receiverId,
                     conversationId: conversation._id,
                     type: 'text',
@@ -113,7 +119,7 @@ const MessagesChatBox = ({ person, conversation }) => {
                 };
             } else {
                 message = {
-                    senderId: account.sub,
+                    senderId: currentAccount.sub,
                     conversationId: conversation._id,
                     receiverId: receiverId,
                     type: 'file',
@@ -121,14 +127,14 @@ const MessagesChatBox = ({ person, conversation }) => {
                 };
             }
 
-            socket.current.emit('sendMessage', message);
+            //socket.current.emit('sendMessage', message);
 
             await newMessage(message);
 
             setValue('');
             setFile();
             setImage('');
-            setNewMessageFlag(prev => !prev);
+            dispatch(setNewMessageFlag(!newMessageFlag));
         }
     }
 
@@ -158,7 +164,7 @@ const MessagesChatBox = ({ person, conversation }) => {
                         onEmojiClick={handleEmojiClick}
                     />
                 }
-                <Footer
+                <InputChatBox
                     sendText={sendText}
                     value={value}
                     setValue={setValue}

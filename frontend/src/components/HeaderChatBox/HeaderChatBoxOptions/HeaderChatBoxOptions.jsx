@@ -1,14 +1,16 @@
 import React, { useContext } from 'react'
+import { useDispatch } from 'react-redux';
 import "./HeaderChatBoxOptions.scss"
 
-import { UserContext } from "../../../context/UserProvider"
+import {
+    setChattingAccount
+} from "../../../redux/slices/accountSlice"
 
 const HeaderChatBoxOptions = () => {
-
-    const { setPerson } = useContext(UserContext)
+    const dispatch = useDispatch()
 
     const handleCloseChatBox = () => {
-        setPerson({})
+        dispatch(setChattingAccount({}))
     }
 
     return (

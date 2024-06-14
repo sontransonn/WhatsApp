@@ -20,9 +20,15 @@
         position: relative;
     }
 
-    label {
-        width: 30px;
-        height: 30px;
+    .footer__options {
+        position: relative;
+
+        .icon {
+            color: #8696a0;
+            font-size: 30px;
+            cursor: pointer;
+            position: relative;
+        }
     }
 
     .search {

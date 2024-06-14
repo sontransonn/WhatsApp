@@ -1,23 +1,19 @@
 import { useState, useContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import "./HeaderOptions.scss"
 
-import { UserContext } from '../../../context/UserProvider';
-import { AccountContext } from "../../../context/AccountProvider"
+import {
+    setCurrentAccount,
+    setChattingAccount
+} from "../../../redux/slices/accountSlice"
 
 const HeaderOptions = () => {
 
-    const {
-        setAccount,
-        setShowloginButton,
-        showlogoutButton,
-        setShowlogoutButton
-    } = useContext(AccountContext);
-
-    const { setPerson } = useContext(UserContext)
+    const dispatch = useDispatch()
 
     const handleLogout = () => {
-        setAccount(null)
-        setPerson({})
+        dispatch(setCurrentAccount(null))
+        dispatch(setChattingAccount({}))
         localStorage.removeItem("user")
     }
 

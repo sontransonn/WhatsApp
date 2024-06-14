@@ -1,4 +1,4 @@
-.login-dialog {
+.whatsapp__login-container__dialog {
     max-width: 65%;
     margin: auto;
     background-color: #fff;
@@ -11,10 +11,10 @@
     padding: 50px 0 0 0;
     overflow: hidden;
 
-    .login-dialog__container {
+    .whatsapp__login-container__dialog__container {
         height: 100%;
 
-        .login-dialog__container__installer {
+        .whatsapp__login-container__dialog__container__header {
             width: 85%;
             margin: auto;
             padding: 30px 20px;
@@ -30,18 +30,18 @@
                 width: 100px;
             }
 
-            .login-dialog__container__installer__content {
+            .whatsapp__login-container__dialog__container__header__content {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
 
-                .login-dialog__container__installer__content__title {
+                h4 {
                     font-size: 18px;
                     font-weight: 400;
                     word-break: break-word;
                 }
 
-                .login-dialog__container__installer__content__body {
+                p {
                     color: #808486;
                     font-weight: 400;
                     font-size: 16px;
@@ -49,8 +49,8 @@
                 }
             }
 
-            .login-dialog__container__installer__btn-install {
-                background-color: #008069;
+            button {
+                background-color: #0b987e;
                 outline: none;
                 border: none;
                 padding: 10px 15px;
@@ -62,12 +62,12 @@
                 white-space: nowrap;
 
                 &:hover {
-                    background-color: #0c725f;
+                    background-color: #136b5b;
                 }
             }
         }
 
-        .login-dialog__container__header {
+        .whatsapp__login-container__dialog__container__body {
             width: 85%;
             display: flex;
             height: max-content;
@@ -77,7 +77,7 @@
             padding-bottom: 50px;
             border-bottom: 1px solid #ddd6d6cc;
 
-            .login-dialog__container__header__content {
+            .whatsapp__login-container__dialog__container__body__content {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -117,7 +117,7 @@
                 }
             }
 
-            .login-dialog__container__header__login {
+            .whatsapp__login-container__dialog__container__body__login {
                 display: flex;
                 position: relative;
                 justify-content: flex-end;
@@ -126,7 +126,7 @@
                     width: 270px;
                 }
 
-                .login-dialog__container__header__login-google {
+                .whatsapp__login-container__dialog__container__body__login__google {
                     position: absolute;
                     top: 50%;
                     left: 50%;
@@ -159,62 +159,66 @@
             }
         }
 
-        .login-dialog__container__phone {
-            width: 85%;
-            margin: auto;
-            padding: 40px 0;
-            color: #30967e;
-            font-weight: 500;
-            font-size: 17px;
-            cursor: pointer;
-        }
+        .whatsapp__login-container__dialog__container__footer {
 
-        .login-dialog__container__instruction {
-            width: 100%;
-            margin: auto;
-            background-color: #f9f9fa;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            gap: 50px;
-            padding: 30px 0;
-
-            .login-dialog__container__instruction_title {
-                text-align: center;
-
-                h5 {
-                    font-size: 28px;
-                    font-weight: 300;
-                    color: #6e7376;
-                    margin-bottom: 15px;
-                }
-
-                a {
-                    font-size: 18px;
-                    color: #30967e;
-                    cursor: pointer;
-
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
+            .whatsapp__login-container__dialog__container__footer__phone-number-link {
+                width: 85%;
+                margin: auto;
+                padding: 40px 0;
+                color: #30967e;
+                font-weight: 500;
+                font-size: 17px;
+                cursor: pointer;
             }
 
-            .login-dialog__container__instruction_video {
+            .whatsapp__login-container__dialog__container__footer__instruction {
                 width: 100%;
+                margin: auto;
+                background-color: #f9f9fa;
                 display: flex;
                 justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 50px;
+                padding: 30px 0;
 
-                video {
-                    width: 80%;
+                .whatsapp__login-container__dialog__container__footer__instruction__title {
+                    text-align: center;
 
-                    @media screen and (max-width: 768px) {
-                        width: 100%;
+                    h5 {
+                        font-size: 28px;
+                        font-weight: 300;
+                        color: #6e7376;
+                        margin-bottom: 15px;
+                    }
+
+                    a {
+                        font-size: 18px;
+                        color: #30967e;
+                        cursor: pointer;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .whatsapp__login-container__dialog__container__footer__instruction__video {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+
+                    video {
+                        width: 80%;
+
+                        @media screen and (max-width: 768px) {
+                            width: 100%;
+                        }
                     }
                 }
             }
         }
+
     }
 
     @media screen and (max-width: 1600px) {
@@ -225,19 +229,7 @@
         max-width: 90%
     }
 
-    @media screen and (max-width: 1200px) {
-        max-width: 90%
-    }
-
-    @media screen and (max-width: 992px) {
-        max-width: 90%
-    }
-
     @media screen and (max-width: 768px) {
-        max-width: 100%
-    }
-
-    @media screen and (max-width: 576px) {
         max-width: 100%
     }
 }

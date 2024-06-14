@@ -1,34 +1,33 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import "./ChatBox.scss"
 
 import HeaderChatBox from '../HeaderChatBox/HeaderChatBox'
 import MessagesChatBox from '../MessagesChatBox/MessagesChatBox'
-
-import { AccountContext } from "../../context/AccountProvider"
-import { UserContext } from '../../context/UserProvider';
 
 import getConversation from '../../services/conversation/getConversation';
 
 const ChatBox = () => {
     const [conversation, setConversation] = useState({});
 
-    const { person } = useContext(UserContext);
-    const { account } = useContext(AccountContext);
+    const {
+        currentAccount,
+        chattingAccount
+    } = useSelector(state => state.account)
 
     useEffect(() => {
         const getConversationDetails = async () => {
-            let data = await getConversation({ senderId: account.sub, receiverId: person.sub });
+            let data = await getConversation({ senderId: currentAccount.sub, receiverId: chattingAccount.sub });
             setConversation(data);
         }
 
         getConversationDetails()
-    }, [person.sub])
+    }, [chattingAccount.sub])
 
     return (
         <div className='chat-box'>
-            <HeaderChatBox person={person} />
+            <HeaderChatBox chattingAccount={chattingAccount} />
             <MessagesChatBox
-                person={person}
                 conversation={conversation}
             />
         </div>

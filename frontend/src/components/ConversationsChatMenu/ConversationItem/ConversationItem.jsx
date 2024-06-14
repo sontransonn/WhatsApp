@@ -1,10 +1,12 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import "./ConversationItem.scss"
 
-import { FaChevronDown } from "react-icons/fa";
+import {
+    setChattingAccount
+} from "../../../redux/slices/accountSlice"
 
-import { AccountContext } from '../../../context/AccountProvider';
-import { UserContext } from '../../../context/UserProvider';
+import { FaChevronDown } from "react-icons/fa";
 
 import getConversation from '../../../services/conversation/getConversation';
 import setConversation from '../../../services/conversation/setConversation';
@@ -14,12 +16,18 @@ import formatDate from '../../../utils/formatDate';
 const ConversationItem = ({ user }) => {
     const [message, setMessage] = useState({});
 
-    const { setPerson } = useContext(UserContext);
-    const { account, newMessageFlag } = useContext(AccountContext);
+    const dispatch = useDispatch();
+    const {
+        currentAccount
+    } = useSelector(state => state.account)
+
+    const {
+        newMessageFlag
+    } = useSelector(state => state.message)
 
     useEffect(() => {
         const getConversationMessage = async () => {
-            const data = await getConversation({ senderId: account.sub, receiverId: user.sub });
+            const data = await getConversation({ senderId: currentAccount.sub, receiverId: user.sub });
             setMessage({ text: data?.message, timestamp: data?.updatedAt });
         }
 
@@ -27,8 +35,8 @@ const ConversationItem = ({ user }) => {
     }, [newMessageFlag])
 
     const getUser = async () => {
-        setPerson(user);
-        await setConversation({ senderId: account.sub, receiverId: user.sub });
+        dispatch(setChattingAccount(user));
+        await setConversation({ senderId: currentAccount.sub, receiverId: user.sub });
     }
 
     return (

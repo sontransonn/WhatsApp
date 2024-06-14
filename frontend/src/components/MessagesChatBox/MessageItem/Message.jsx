@@ -1,19 +1,19 @@
 import React, { useContext } from 'react'
+import { useSelector } from 'react-redux';
 import "./Message.scss"
-
-import { GetApp as GetAppIcon } from '@mui/icons-material';
-
-import { AccountContext } from '../../../context/AccountProvider'
 
 import formatDate from '../../../utils/formatDate';
 
 const Message = ({ message }) => {
-    const { account } = useContext(AccountContext);
+
+    const {
+        currentAccount,
+    } = useSelector(state => state.account)
 
     return (
         <div className='message'>
             {
-                account.sub === message.senderId
+                currentAccount.sub === message.senderId
                     ?
                     <div className="sender">
                         <p className='text'>{message.text}</p>

@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import "./Footer.scss"
+import "./InputChatBox.scss"
 
-import { EmojiEmotions, Mic } from '@mui/icons-material';
+import { Mic } from '@mui/icons-material';
 import AddIcon from '@mui/icons-material/Add';
 import { MdMood } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 
+import InputChatBoxOptions from './InputChatBoxOptions/InputChatBoxOptions';
+
 import uploadFile from '../../services/file/uploadFile';
 
-const Footer = (props) => {
+const FooterChatBox = (props) => {
 
     const {
         sendText,
@@ -21,7 +23,7 @@ const Footer = (props) => {
         setOpenEmoji
     } = props
 
-    const [openOptions, setOpenOptions] = useState(true)
+    const [openOptions, setOpenOptions] = useState(false)
 
     useEffect(() => {
         const getImage = async () => {
@@ -64,18 +66,13 @@ const Footer = (props) => {
                 className={openEmoji ? "icon--selected" : "icon"}
                 onClick={handleOpenEmoji}
             />
-            <label htmlFor="fileInput">
+            <div className="footer__options">
                 <AddIcon
                     className='icon'
                     onClick={() => setOpenOptions((prev) => !prev)}
                 />
-            </label>
-            <input
-                type='file'
-                id="fileInput"
-                style={{ display: 'none' }}
-                onChange={(e) => onFileChange(e)}
-            />
+                {openOptions && <InputChatBoxOptions />}
+            </div>
             <div className="search">
                 <input
                     type="text"
@@ -90,4 +87,4 @@ const Footer = (props) => {
     )
 }
 
-export default Footer
+export default FooterChatBox

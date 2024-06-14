@@ -1,5 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import "./LoginDialog.scss"
+
+import {
+    setCurrentAccount
+} from "../../redux/slices/accountSlice"
 
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -7,26 +12,18 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode";
 
-import { AccountContext } from '../../context/AccountProvider';
 import addUser from '../../services/user/addUser';
 
-import { qrCodeImage } from '../../constants/data';
-
+import qrCodeImage from '../../assets/images/qrcode.jpg';
 import imageEmpty from "../../assets/images/imageEmpty.png"
 import instructionVideo from "../../assets/videos/instruction.mp4"
 
 const LoginDialog = () => {
-
-    const {
-        setAccount,
-        showloginButton,
-        setShowloginButton,
-        setShowlogoutButton
-    } = useContext(AccountContext);
+    const dispatch = useDispatch();
 
     const onLoginSuccess = async (res) => {
         let decoded = jwtDecode(res.credential);
-        setAccount(decoded)
+        dispatch(setCurrentAccount(decoded))
         localStorage.setItem("user", JSON.stringify(decoded))
         await addUser(decoded);
     }
@@ -36,23 +33,23 @@ const LoginDialog = () => {
     };
 
     return (
-        <div className="login-dialog">
-            <div className="login-dialog__container">
-                <div className="login-dialog__container__installer">
+        <div className="whatsapp__login-container__dialog">
+            <div className="whatsapp__login-container__dialog__container">
+                <div className="whatsapp__login-container__dialog__container__header">
                     <img src={imageEmpty} alt="" />
-                    <div className="login-dialog__container__installer__content">
-                        <p className='login-dialog__container__installer__content__title'>Tải xuống WhatsApp cho Windows</p>
-                        <p className='login-dialog__container__installer__content__body'>
+                    <div className="whatsapp__login-container__dialog__container__header__content">
+                        <h4>Tải xuống WhatsApp cho Windows</h4>
+                        <p>
                             Tận hưởng tính năng gọi điện, chia sẻ màn hình và
                             trải nghiệm nhanh hơn với ứng dụng cho Windows mới.
                         </p>
                     </div>
-                    <button className="login-dialog__container__installer__btn-install">
+                    <button>
                         Tải ứng dụng
                     </button>
                 </div>
-                <div className="login-dialog__container__header">
-                    <div className="login-dialog__container__header__content">
+                <div className="whatsapp__login-container__dialog__container__body">
+                    <div className="whatsapp__login-container__dialog__container__body__content">
                         <h4>Sử dụng WhatsApp trên máy tính của bạn</h4>
                         <ul>
                             <li>1. Mở WhatsApp trên điện thoại</li>
@@ -64,9 +61,9 @@ const LoginDialog = () => {
                             <li>4. Hướng điện thoại vào màn hình này để quét mã QR</li>
                         </ul>
                     </div>
-                    <div className="login-dialog__container__header__login">
+                    <div className="whatsapp__login-container__dialog__container__body__login">
                         <img src={qrCodeImage} alt="" />
-                        <div className="login-dialog__container__header__login-google">
+                        <div className="whatsapp__login-container__dialog__container__body__login__google">
                             <GoogleLogin
                                 buttonText=""
                                 onSuccess={onLoginSuccess}
@@ -75,21 +72,23 @@ const LoginDialog = () => {
                         </div>
                     </div>
                 </div>
-                <p className="login-dialog__container__phone">
-                    Liên kết thông qua số điện thoại
-                </p>
-                <div className="login-dialog__container__instruction">
-                    <div className="login-dialog__container__instruction_title">
-                        <h5>HƯỚNG DẪN</h5>
-                        <a
-                            href='https://faq.whatsapp.com/1317564962315842/?cms_platform=web&lang=vi'
-                            target='_blank'
-                        >Bạn cần trợ giúp để bắt đầu?</a>
-                    </div>
-                    <div className="login-dialog__container__instruction_video">
-                        <video controls>
-                            <source src={instructionVideo} />
-                        </video>
+                <div className="whatsapp__login-container__dialog__container__footer">
+                    <p className="whatsapp__login-container__dialog__container__footer__phone-number-link">
+                        Liên kết thông qua số điện thoại
+                    </p>
+                    <div className="whatsapp__login-container__dialog__container__footer__instruction">
+                        <div className="whatsapp__login-container__dialog__container__footer__instruction__title">
+                            <h5>HƯỚNG DẪN</h5>
+                            <a
+                                href='https://faq.whatsapp.com/1317564962315842/?cms_platform=web&lang=vi'
+                                target='_blank'
+                            >Bạn cần trợ giúp để bắt đầu?</a>
+                        </div>
+                        <div className="whatsapp__login-container__dialog__container__footer__instruction__video">
+                            <video controls>
+                                <source src={instructionVideo} />
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,14 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import "./ChatDialog.scss"
 
 import ChatMenu from '../ChatMenu/ChatMenu';
 import EmptyChatBox from '../ChatBox/EmptyChatBox/EmptyChatBox';
 import ChatBox from '../ChatBox/ChatBox';
 
-import { UserContext } from '../../context/UserProvider';
-
 const ChatDialog = () => {
-    const { person } = useContext(UserContext);
+
+    const {
+        chattingAccount
+    } = useSelector(state => state.account)
 
     return (
         <div className="chat-dialog">
@@ -18,7 +20,7 @@ const ChatDialog = () => {
                 </div>
                 <div className="chat-dialog__container__chatbox">
                     {
-                        Object.keys(person).length ? <ChatBox /> : <EmptyChatBox />
+                        Object.keys(chattingAccount).length ? <ChatBox /> : <EmptyChatBox />
                     }
                 </div>
             </div>

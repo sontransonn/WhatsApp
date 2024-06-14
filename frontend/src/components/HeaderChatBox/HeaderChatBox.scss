@@ -3,27 +3,49 @@
     height: 60px;
     padding: 10px 25px;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 
-    img {
-        width: 40px;
-        height: 40px;
-        object-fit: cover;
-        border-radius: 50%;
+    .chat-box__header__avatar {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .icon {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            color: rgb(23, 177, 23);
+            font-size: 14px;
+        }
+
+        .icon--offline {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            color: #343131;
+            font-size: 14px;
+        }
     }
 
     .chat-box__header__name-status {
         color: #fff;
 
         h5 {
-            font-size: 18px;
-            font-weight: 400;
+            font-size: 16px;
+            font-weight: 550;
             margin-bottom: 5px;
         }
 
-        h6 {
+        p {
             color: #a0abb2;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 400;
         }
     }

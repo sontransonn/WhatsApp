@@ -1,21 +1,21 @@
-import { useContext, useState } from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import "./HeaderChatMenu.scss"
 
 import { MdOutlineGroups } from "react-icons/md";
 import { IoMdMore } from "react-icons/io";
 
-import InfoDrawer from '../Drawer/InfoDrawer';
+import InfoDrawer from '../InfoDrawer/InfoDrawer';
 import HeaderOptions from './HeaderOptions/HeaderOptions';
-
-import { AccountContext } from "../../context/AccountProvider"
-
 
 const HeaderChatMenu = () => {
 
     const [openDrawer, setOpenDrawer] = useState(false);
     const [openOptions, setOpenOptions] = useState(false)
 
-    const { account } = useContext(AccountContext);
+    const {
+        currentAccount
+    } = useSelector(state => state.account)
 
     const handleOpenDrawer = () => {
         setOpenDrawer((prev) => !prev)
@@ -29,7 +29,7 @@ const HeaderChatMenu = () => {
         <>
             <div className='menu__header'>
                 <img
-                    src={account.picture}
+                    src={currentAccount.picture}
                     alt=""
                     onClick={handleOpenDrawer}
                 />
