@@ -16,7 +16,7 @@ function App() {
     <div className='whatsapp'>
       {
         currentAccount ?
-          <div className='messenger__chat'>
+          <div className='whatsapp__chat-container'>
             <ChatDialog />
           </div>
           :
