@@ -11,7 +11,7 @@ const Sidebar = () => {
     const [selectOption, setSelectOption] = useState(1)
 
     return (
-        <div className="chat-menu">
+        <div className="sidebar__sidebarContainer">
             <HeaderBar />
             <SearchBar
                 text={text}

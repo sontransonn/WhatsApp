@@ -6,7 +6,7 @@ import messageReducer from './slices/messageSlice'
 const store = configureStore({
     reducer: {
         account: accountReducer,
-        message: messageReducer
+        message: messageReducer,
     },
 })
 

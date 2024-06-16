@@ -1,7 +1,6 @@
 import CONVERSATION from "../../models/conversationModel.js";
 
 const newConversation = async (req, res) => {
-    console.log(req.body);
     try {
         let senderId = req.body.senderId;
         let receiverId = req.body.receiverId;

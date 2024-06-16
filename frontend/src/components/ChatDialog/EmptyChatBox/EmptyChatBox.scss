@@ -1,4 +1,4 @@
-.empty-chat {
+.chatbox__emptyChatbox {
     height: 100%;
     text-align: center;
     display: flex;
@@ -48,7 +48,7 @@
         }
     }
 
-    .empty-chat__note {
+    span {
         position: absolute;
         bottom: 20px;
         color: #8d9595;
@@ -57,7 +57,7 @@
         align-items: center;
         gap: 8px;
 
-        .empty-chat__note__icon {
+        .icon {
             font-size: 14px;
         }
     }

@@ -1,26 +1,23 @@
-.header-chat-box-options {
+.menu__menuOptions {
     position: absolute;
     top: 110%;
     right: 0;
     border-radius: 5px;
     overflow: hidden;
+    max-width: 340px;
+    width: max-content;
+    background-color: #233138;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
 
-    .header-chat-box-options__items {
-        max-width: 340px;
-        width: max-content;
-        background-color: #233138;
-        padding: 15px 0;
-        display: flex;
-        flex-direction: column;
+    .menu__menuOptions__item {
+        cursor: pointer;
+        padding: 15px 20px;
+        color: #beb8b1;
 
-        .item {
-            cursor: pointer;
-            padding: 15px 20px;
-            color: #beb8b1;
-
-            &:hover {
-                background-color: rgba(0, 0, 0, 0.2);
-            }
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
         }
     }
 }

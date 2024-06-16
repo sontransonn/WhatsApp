@@ -1,4 +1,4 @@
-.whatsapp__login-container__dialog {
+.loginContainer__dialog {
     max-width: 65%;
     margin: auto;
     background-color: #fff;
@@ -11,10 +11,10 @@
     padding: 50px 0 0 0;
     overflow: hidden;
 
-    .whatsapp__login-container__dialog__container {
+    .loginContainer__dialog__container {
         height: 100%;
 
-        .whatsapp__login-container__dialog__container__header {
+        .loginContainer__dialog__container__header {
             width: 85%;
             margin: auto;
             padding: 30px 20px;
@@ -30,7 +30,7 @@
                 width: 100px;
             }
 
-            .whatsapp__login-container__dialog__container__header__content {
+            .loginContainer__dialog__container__header__content {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
@@ -67,7 +67,7 @@
             }
         }
 
-        .whatsapp__login-container__dialog__container__body {
+        .loginContainer__dialog__container__body {
             width: 85%;
             display: flex;
             height: max-content;
@@ -77,7 +77,7 @@
             padding-bottom: 50px;
             border-bottom: 1px solid #ddd6d6cc;
 
-            .whatsapp__login-container__dialog__container__body__content {
+            .loginContainer__dialog__container__body__content {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -117,7 +117,7 @@
                 }
             }
 
-            .whatsapp__login-container__dialog__container__body__login {
+            .loginContainer__dialog__container__body__login {
                 display: flex;
                 position: relative;
                 justify-content: flex-end;
@@ -126,7 +126,7 @@
                     width: 270px;
                 }
 
-                .whatsapp__login-container__dialog__container__body__login__google {
+                .loginContainer__dialog__container__body__login__google {
                     position: absolute;
                     top: 50%;
                     left: 50%;
@@ -159,9 +159,9 @@
             }
         }
 
-        .whatsapp__login-container__dialog__container__footer {
+        .loginContainer__dialog__container__footer {
 
-            .whatsapp__login-container__dialog__container__footer__phone-number-link {
+            p {
                 width: 85%;
                 margin: auto;
                 padding: 40px 0;
@@ -171,7 +171,7 @@
                 cursor: pointer;
             }
 
-            .whatsapp__login-container__dialog__container__footer__instruction {
+            .loginContainer__dialog__container__footer__instruction {
                 width: 100%;
                 margin: auto;
                 background-color: #f9f9fa;
@@ -182,7 +182,7 @@
                 gap: 50px;
                 padding: 30px 0;
 
-                .whatsapp__login-container__dialog__container__footer__instruction__title {
+                .loginContainer__dialog__container__footer__instruction__title {
                     text-align: center;
 
                     h5 {
@@ -203,7 +203,7 @@
                     }
                 }
 
-                .whatsapp__login-container__dialog__container__footer__instruction__video {
+                .loginContainer__dialog__container__footer__instruction__video {
                     width: 100%;
                     display: flex;
                     justify-content: center;

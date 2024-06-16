@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import "./ChatDialog.scss"
 
 import Sidebar from './Sidebar/Sidebar';
-import EmptyChatBox from './ChatBox/EmptyChatBox/EmptyChatBox';
+import EmptyChatBox from './EmptyChatBox/EmptyChatBox'
 import ChatBox from './ChatBox/ChatBox';
 
 const ChatDialog = () => {
@@ -13,16 +13,14 @@ const ChatDialog = () => {
     } = useSelector(state => state.account)
 
     return (
-        <div className="chat-container__dialog">
-            <div className='chat-dialog__container'>
-                <div className="chat-dialog__container__chatmenu">
-                    <Sidebar />
-                </div>
-                <div className="chat-dialog__container__chatbox">
-                    {
-                        Object.keys(chattingAccount).length ? <ChatBox /> : <EmptyChatBox />
-                    }
-                </div>
+        <div className='chatContainer__dialog'>
+            <div className="chatContainer__dialog__sidebar">
+                <Sidebar />
+            </div>
+            <div className="chatContainer__dialog__chatbox">
+                {
+                    Object.keys(chattingAccount).length ? <ChatBox /> : <EmptyChatBox />
+                }
             </div>
         </div>
     )

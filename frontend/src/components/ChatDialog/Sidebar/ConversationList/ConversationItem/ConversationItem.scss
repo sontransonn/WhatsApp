@@ -1,4 +1,4 @@
-.conversation-item {
+.conversationList__conversationItem {
     display: flex;
     padding: 13px 15px;
     cursor: pointer;
@@ -10,14 +10,14 @@
         border-radius: 50%;
     }
 
-    .conversation-item__content {
+    .conversationList__conversationItem__content {
         width: 100%;
         display: flex;
         justify-content: center;
         flex-direction: column;
         gap: 5px;
 
-        .conversation-item__content__name-date {
+        .conversationList__conversationItem__content__nameDate {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -34,7 +34,7 @@
             }
         }
 
-        .conversation-item__content__text-message {
+        .conversationList__conversationItem__content__textMessage {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -43,7 +43,7 @@
                 color: #7b8c95;
             }
 
-            .conversation-item__content__text-message__icon {
+            .icon {
                 color: #7b8c95;
             }
         }

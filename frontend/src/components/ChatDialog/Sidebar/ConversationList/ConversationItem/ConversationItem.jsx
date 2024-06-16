@@ -8,8 +8,10 @@ import {
 
 import { FaChevronDown } from "react-icons/fa";
 
-import getConversation from '../../../../../services/conversation/getConversation';
-import setConversation from '../../../../../services/conversation/setConversation';
+import {
+    getConversation,
+    setConversation
+} from '../../../../../services/apiConversation';
 
 import formatDate from '../../../../../utils/formatDate';
 
@@ -41,22 +43,22 @@ const ConversationItem = ({ user }) => {
 
     return (
         <div
-            className="conversation-item"
+            className="conversationList__conversationItem"
             onClick={() => getUser()}
         >
             <img src={user.picture} alt="" />
-            <div className="conversation-item__content">
-                <div className="conversation-item__content__name-date">
+            <div className="conversationList__conversationItem__content">
+                <div className="conversationList__conversationItem__content__nameDate">
                     <h4>{user.name}</h4>
                     {
                         message?.text &&
                         <p>{formatDate(message?.timestamp)}</p>
                     }
                 </div>
-                <div className="conversation-item__content__text-message">
+                <div className="conversationList__conversationItem__content__textMessage">
                     <p>{message?.text?.includes('localhost') ? 'media' : message.text}</p>
                     <FaChevronDown
-                        className='conversation-item__content__text-message__icon'
+                        className='icon'
                     />
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import "./LoginDialog.scss"
 
 import {
@@ -12,7 +12,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode";
 
-import addUser from '../../services/user/addUser';
+import { addUser } from '../../services/apiUser'
 
 import qrCodeImage from '../../assets/images/qrcode.jpg';
 import imageEmpty from "../../assets/images/imageEmpty.png"
@@ -33,11 +33,11 @@ const LoginDialog = () => {
     };
 
     return (
-        <div className="whatsapp__login-container__dialog">
-            <div className="whatsapp__login-container__dialog__container">
-                <div className="whatsapp__login-container__dialog__container__header">
+        <div className="loginContainer__dialog">
+            <div className="loginContainer__dialog__container">
+                <div className="loginContainer__dialog__container__header">
                     <img src={imageEmpty} alt="" />
-                    <div className="whatsapp__login-container__dialog__container__header__content">
+                    <div className="loginContainer__dialog__container__header__content">
                         <h4>Tải xuống WhatsApp cho Windows</h4>
                         <p>
                             Tận hưởng tính năng gọi điện, chia sẻ màn hình và
@@ -48,8 +48,8 @@ const LoginDialog = () => {
                         Tải ứng dụng
                     </button>
                 </div>
-                <div className="whatsapp__login-container__dialog__container__body">
-                    <div className="whatsapp__login-container__dialog__container__body__content">
+                <div className="loginContainer__dialog__container__body">
+                    <div className="loginContainer__dialog__container__body__content">
                         <h4>Sử dụng WhatsApp trên máy tính của bạn</h4>
                         <ul>
                             <li>1. Mở WhatsApp trên điện thoại</li>
@@ -61,9 +61,9 @@ const LoginDialog = () => {
                             <li>4. Hướng điện thoại vào màn hình này để quét mã QR</li>
                         </ul>
                     </div>
-                    <div className="whatsapp__login-container__dialog__container__body__login">
+                    <div className="loginContainer__dialog__container__body__login">
                         <img src={qrCodeImage} alt="" />
-                        <div className="whatsapp__login-container__dialog__container__body__login__google">
+                        <div className="loginContainer__dialog__container__body__login__google">
                             <GoogleLogin
                                 buttonText=""
                                 onSuccess={onLoginSuccess}
@@ -72,19 +72,19 @@ const LoginDialog = () => {
                         </div>
                     </div>
                 </div>
-                <div className="whatsapp__login-container__dialog__container__footer">
-                    <p className="whatsapp__login-container__dialog__container__footer__phone-number-link">
+                <div className="loginContainer__dialog__container__footer">
+                    <p>
                         Liên kết thông qua số điện thoại
                     </p>
-                    <div className="whatsapp__login-container__dialog__container__footer__instruction">
-                        <div className="whatsapp__login-container__dialog__container__footer__instruction__title">
+                    <div className="loginContainer__dialog__container__footer__instruction">
+                        <div className="loginContainer__dialog__container__footer__instruction__title">
                             <h5>HƯỚNG DẪN</h5>
                             <a
                                 href='https://faq.whatsapp.com/1317564962315842/?cms_platform=web&lang=vi'
                                 target='_blank'
                             >Bạn cần trợ giúp để bắt đầu?</a>
                         </div>
-                        <div className="whatsapp__login-container__dialog__container__footer__instruction__video">
+                        <div className="loginContainer__dialog__container__footer__instruction__video">
                             <video controls>
                                 <source src={instructionVideo} />
                             </video>

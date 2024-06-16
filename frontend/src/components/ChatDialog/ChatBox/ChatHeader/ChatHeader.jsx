@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import "./ChatHeader.scss"
 
@@ -7,7 +7,7 @@ import { Search, MoreVert } from '@mui/icons-material';
 
 import HeaderMenu from './HeaderMenu/HeaderMenu';
 
-const ChatHeader = ({ chattingAccount }) => {
+const ChatHeader = ({ chattingAccount, conversation }) => {
 
     const [openOptions, setOpenOptions] = useState(false)
 
@@ -22,22 +22,28 @@ const ChatHeader = ({ chattingAccount }) => {
     }
 
     return (
-        <div className='chat-box__header'>
-            <div className="chat-box__header__avatar">
+        <div className='chatboxContainer__chatHeader'>
+            <div className="chatboxContainer__chatHeader__avatar">
                 <img src={url} alt="" />
                 {activeAccounts?.find(account => account.sub === chattingAccount.sub) ? <FaCircle className='icon' /> : <FaCircle className='icon--offline' />}
             </div>
-            <div className="chat-box__header__name-status">
+            <div className="chatboxContainer__chatHeader__name">
                 <h5>{chattingAccount.name}</h5>
                 <p>Nhắn tin cho {chattingAccount.name}</p>
             </div>
-            <div className="chat-box__header__icons">
+            <div className="chatboxContainer__chatHeader__icons">
                 <Search className='icon' />
-                <MoreVert
-                    className='icon'
-                    onClick={handleOpenOptions}
-                />
-                {openOptions && <HeaderMenu />}
+                <div className="chatboxContainer__chatHeader__icons__menu">
+                    <MoreVert
+                        className='icon'
+                        onClick={handleOpenOptions}
+                    />
+                    {openOptions &&
+                        <HeaderMenu
+                            conversation={conversation}
+                            setOpenOptions={setOpenOptions}
+                        />}
+                </div>
             </div>
         </div>
     )

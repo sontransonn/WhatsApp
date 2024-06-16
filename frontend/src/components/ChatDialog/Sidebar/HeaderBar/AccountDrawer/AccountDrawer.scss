@@ -1,4 +1,4 @@
-.info-drawer {
+.sidebarContainer__accountDrawer {
     position: absolute;
     top: 0;
     left: 0;
@@ -7,7 +7,7 @@
     z-index: 15;
     background-color: #111b21;
 
-    .info-drawer__header {
+    .sidebarContainer__accountDrawer__header {
         background-color: #202c33;
         height: 120px;
         display: flex;
@@ -15,7 +15,7 @@
         padding: 20px;
         color: #fff;
 
-        .info-drawer__header__content {
+        .sidebarContainer__accountDrawer__header__content {
             display: flex;
             align-items: center;
             gap: 30px;
@@ -32,9 +32,9 @@
         }
     }
 
-    .profile {
+    .sidebarContainer__accountDrawer__profile {
 
-        .profile__img {
+        .sidebarContainer__accountDrawer__profile__img {
             display: flex;
             justify-content: center;
             padding: 30px;
@@ -46,7 +46,7 @@
             }
         }
 
-        .profile__info {
+        .sidebarContainer__accountDrawer__profile__info {
             padding: 15px 30px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.14);
 
@@ -57,7 +57,7 @@
                 margin-bottom: 25px;
             }
 
-            .profile__info__edit {
+            .sidebarContainer__accountDrawer__profile__info__edit {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -66,14 +66,14 @@
                     color: #fff;
                 }
 
-                .profile__info__edit__icon {
+                .icon {
                     color: #a1b2b2;
                     cursor: pointer;
                 }
             }
         }
 
-        .profile__notice {
+        p {
             font-size: 16px;
             padding: 20px 30px;
             color: #a1b2b2;
@@ -81,7 +81,7 @@
             padding-bottom: 30px;
         }
 
-        .profile__introduce {
+        .sidebarContainer__accountDrawer__profile__introduce {
             padding: 15px 30px;
 
             h6 {
@@ -91,17 +91,17 @@
                 margin-bottom: 25px;
             }
 
-            .profile__introduce__edit {
+            .sidebarContainer__accountDrawer__profile__introduce__edit {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
 
-                p {
+                span {
                     color: #fff;
                     border: none;
                 }
 
-                .profile__introduce__edit__icon {
+                .icon {
                     color: #a1b2b2;
                     cursor: pointer;
                 }

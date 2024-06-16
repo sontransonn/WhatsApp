@@ -1,58 +1,79 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import "./ChatInput.scss"
+
+import {
+    setNewMessageFlag
+} from "../../../../redux/slices/messageSlice"
 
 import { Mic } from '@mui/icons-material';
 import AddIcon from '@mui/icons-material/Add';
 import { MdMood } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 
-import MediaMenu from './MediaMenu/MediaMenu';
+import AttachmentMenu from './AttachmentMenu/AttachmentMenu';
+
+import { newMessage } from "../../../../services/apiMessage"
 
 const ChatInput = (props) => {
 
+    const [file, setFile] = useState(null);
+
     const {
-        sendText,
-        value,
-        setValue,
-        setFile,
-        file,
-        setImage,
         openEmoji,
-        setOpenEmoji
+        conversation,
+        handleOpenEmoji,
+        handleCloseEmoji,
+        value,
+        setValue
     } = props
 
     const [openOptions, setOpenOptions] = useState(false)
 
-    useEffect(() => {
-        const getImage = async () => {
-            if (file) {
-                const data = new FormData();
-                data.append("name", file.name);
-                data.append("file", file);
+    const dispatch = useDispatch()
+    const {
+        currentAccount
+    } = useSelector(state => state.account)
 
-                const response = await uploadFile(data);
-                setImage(response.data);
+    const {
+        newMessageFlag
+    } = useSelector(state => state.message)
+
+    const receiverId = conversation?.members?.find(member => member !== currentAccount.sub);
+
+    const sendText = async (e) => {
+        if (!value) return;
+
+        if (e.key === 'Enter') {
+            let message = {};
+
+            if (!file) {
+                message = {
+                    senderId: currentAccount.sub,
+                    receiverId: receiverId,
+                    conversationId: conversation._id,
+                    type: 'text',
+                    text: value
+                };
+            } else {
+                message = {
+                    senderId: currentAccount.sub,
+                    conversationId: conversation._id,
+                    receiverId: receiverId,
+                    type: 'file',
+                    text: image
+                };
             }
+
+            await newMessage(message);
+
+            setValue('');
+            dispatch(setNewMessageFlag(!newMessageFlag));
         }
-
-        getImage()
-    }, [file])
-
-    const onFileChange = (e) => {
-        setValue(e.target.files[0].name);
-        setFile(e.target.files[0]);
-    }
-
-    const handleOpenEmoji = () => {
-        setOpenEmoji(true)
-    }
-
-    const handleCloseEmoji = () => {
-        setOpenEmoji(false)
     }
 
     return (
-        <div className='footer'>
+        <div className='chatboxContainer__chatInput'>
             {openEmoji
                 &&
                 <IoClose
@@ -64,14 +85,14 @@ const ChatInput = (props) => {
                 className={openEmoji ? "icon--selected" : "icon"}
                 onClick={handleOpenEmoji}
             />
-            <div className="footer__options">
+            <div className="chatboxContainer__chatInput__attachmentMenu">
                 <AddIcon
                     className='icon'
                     onClick={() => setOpenOptions((prev) => !prev)}
                 />
-                {openOptions && <MediaMenu />}
+                {openOptions && <AttachmentMenu />}
             </div>
-            <div className="search">
+            <div className="chatboxContainer__chatInput__searchInput">
                 <input
                     type="text"
                     placeholder='Soạn tin nhắn'

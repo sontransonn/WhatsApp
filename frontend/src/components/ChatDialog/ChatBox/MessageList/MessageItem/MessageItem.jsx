@@ -1,28 +1,30 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux';
 import "./MessageItem.scss"
 
 import formatDate from '../../../../../utils/formatDate';
 
-const MessageItem = ({ message }) => {
+const MessageItem = ({ ref, message, key }) => {
 
     const {
         currentAccount,
     } = useSelector(state => state.account)
 
     return (
-        <div className='message'>
+        <div
+            className='messageItemContainer__messageItem'
+        >
             {
                 currentAccount.sub === message.senderId
                     ?
-                    <div className="sender">
-                        <p className='text'>{message.text}</p>
-                        <p className='time'>{formatDate(message.createdAt)}</p>
+                    <div className="messageItem__sender">
+                        <p>{message.text}</p>
+                        <span>{formatDate(message.createdAt)}</span>
                     </div>
                     :
-                    <div className="receiver">
-                        <p className='text'>{message.text}</p>
-                        <p className='time'>{formatDate(message.createdAt)}</p>
+                    <div className="messageItem__receiver">
+                        <p>{message.text}</p>
+                        <span>{formatDate(message.createdAt)}</span>
                     </div>
             }
         </div>

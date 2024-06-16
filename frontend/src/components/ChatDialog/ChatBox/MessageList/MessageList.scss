@@ -1,52 +1,15 @@
-.chat-box__box-messages {
+.chatboxContainer__messageList {
+    background-image: url("../../../../assets/images/bgImg.webp");
+    background-size: cover;
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     overflow: auto;
+    padding: 10px 50px;
+    gap: 3px;
+    overflow: scroll;
 
-    .chat-box__messages__box-messages {
-        background-image: url("../../../../assets/images/bgImg.webp");
-        background-size: cover;
-        flex: 1;
-        padding: 10px 50px;
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-        overflow: scroll;
-
-        @media screen and (max-width: 1200px) {
-            padding: 10px 25px;
-        }
-    }
-
-    .chat-box__box-messages__box-footer {
-
-        .emoji-container {
-            width: 100% !important;
-            height: 350px !important;
-            background-color: #202c33;
-            border: none;
-
-            input {
-                background-color: #222e35;
-                border: none;
-            }
-
-            .epr-category-nav {
-                padding: 5px 0;
-            }
-
-            h2 {
-                background-color: #202c33;
-                font-size: 14px;
-                font-weight: 400;
-                color: rgba(255, 255, 255, 0.4);
-            }
-
-            & div:nth-of-type(3) {
-                display: none;
-            }
-        }
+    @media screen and (max-width: 1200px) {
+        padding: 10px 25px;
     }
 }

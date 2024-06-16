@@ -1,10 +1,10 @@
-.message {
+.messageItemContainer__messageItem {
     display: flex;
     width: fit-content;
     color: #fff;
     width: 100%;
 
-    .sender {
+    .messageItem__sender {
         background-color: #005c4b;
         padding: 10px;
         border-radius: 8px;
@@ -12,13 +12,13 @@
         margin-left: auto;
         max-width: 60%;
 
-        .text {
+        p {
             font-size: 14px;
             padding: 0 25px 0 5px;
             word-break: break-word;
         }
 
-        .time {
+        span {
             font-size: 10px;
             color: #919191;
             margin-top: 6px;
@@ -27,19 +27,19 @@
         }
     }
 
-    .receiver {
+    .messageItem__receiver {
         background-color: #202c33;
         padding: 10px;
         border-radius: 8px;
         display: flex;
 
-        .text {
+        p {
             font-size: 14px;
             padding: 0 25px 0 5px;
             word-break: break-word;
         }
 
-        .time {
+        span {
             font-size: 10px;
             color: #919191;
             margin-top: 6px;

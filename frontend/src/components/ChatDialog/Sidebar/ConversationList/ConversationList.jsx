@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import "./ConversationList.scss"
 
 import ConversationItem from './ConversationItem/ConversationItem';
 
-import getUsers from '../../../../services/user/getUsers';
+import { getUsers } from '../../../../services/apiUser';
 
 const ConversationList = ({ selectOption, text }) => {
     const [users, setUsers] = useState([]);
@@ -29,15 +29,8 @@ const ConversationList = ({ selectOption, text }) => {
         }
     }, [text, selectOption])
 
-    // useEffect(() => {
-    //     socket.current.emit('addUser', account);
-    //     socket.current.on("getUsers", users => {
-    //         setActiveUsers(users);
-    //     })
-    // }, [account])
-
     return (
-        <div className="chat-menu__conversations">
+        <div className="sidebarContainer__conversationList">
             {
                 users && users.map((user, index) => (
                     user.sub !== currentAccount.sub &&

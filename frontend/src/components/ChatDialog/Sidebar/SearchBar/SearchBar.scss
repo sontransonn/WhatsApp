@@ -1,4 +1,4 @@
-.chat-menu__search {
+.sidebarContainer__searchBar {
     background-color: #151d22;
     border-bottom: 1px solid rgba(255, 255, 255, 0.14);
     padding: 10px 18px;
@@ -6,7 +6,7 @@
     flex-direction: column;
     gap: 15px;
 
-    .chat-menu__search__input {
+    .sidebarContainer__searchBar__input {
         position: relative;
         display: flex;
         width: 100%;
@@ -15,7 +15,7 @@
         padding: 10px;
         border-radius: 10px;
 
-        .chat-menu__search__input__icon {
+        .icon {
             color: #9faab2;
         }
 
@@ -30,7 +30,7 @@
             margin-right: 30px;
         }
 
-        .chat-menu__search__input__icon-clear {
+        .icon-clear {
             color: #9faab2;
             font-size: 25px;
             position: absolute;
@@ -39,11 +39,11 @@
         }
     }
 
-    .chat-menu__search__selector {
+    .sidebarContainer__searchBar__selector {
         display: flex;
         gap: 10px;
 
-        .chat-menu__search__selector__item {
+        .sidebarContainer__searchBar__selector__item {
             background-color: #202c33;
             padding: 10px 15px;
             border-radius: 20px;
@@ -56,8 +56,8 @@
             }
         }
 
-        .chat-menu__search__selector__item--selected {
-            background-color: rgba(0, 137, 123, 0.4);
+        .sidebarContainer__searchBar__selector__item--selected {
+            background-color: rgba(0, 255, 229, 0.2);
             padding: 10px 15px;
             border-radius: 20px;
             color: #939992;

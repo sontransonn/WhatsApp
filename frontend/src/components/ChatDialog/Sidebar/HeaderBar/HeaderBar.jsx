@@ -27,15 +27,15 @@ const HeaderBar = () => {
 
     return (
         <>
-            <div className='menu__header'>
+            <div className='sidebarContainer__headerBar'>
                 <img
                     src={currentAccount.picture}
                     alt=""
                     onClick={handleOpenDrawer}
                 />
-                <div className="menu__header__icons">
+                <div className="sidebarContainer__headerBar__icons">
                     <MdOutlineGroups className='icon' />
-                    <div className="menu__header__icons__options">
+                    <div className="sidebarContainer__headerBar__icons__menu">
                         <IoMdMore
                             className='icon'
                             onClick={handleOpenOptions}

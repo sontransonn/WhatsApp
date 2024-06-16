@@ -16,13 +16,13 @@ function App() {
     <div className='whatsapp'>
       {
         currentAccount ?
-          <div className='whatsapp__chat-container'>
+          <div className='whatsapp__chatContainer'>
             <ChatDialog />
           </div>
           :
-          <div className='whatsapp__login-container'>
-            <div className="whatsapp__login-container__header">
-              <div className="whatsapp__login-container__header__title">
+          <div className='whatsapp__loginContainer'>
+            <div className="whatsapp__loginContainer__header">
+              <div className="whatsapp__loginContainer__header__title">
                 <img src={whatsapp} alt="" />
                 <h5>WHATSAPP WEB</h5>
               </div>

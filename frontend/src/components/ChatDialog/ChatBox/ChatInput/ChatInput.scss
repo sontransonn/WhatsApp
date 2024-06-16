@@ -1,10 +1,11 @@
-.footer {
+.chatboxContainer__chatInput {
     height: 65px;
     background-color: #202c33;
     display: flex;
     align-items: center;
     padding: 10px 25px;
     gap: 15px;
+    position: relative;
 
     .icon {
         color: #8696a0;
@@ -20,8 +21,12 @@
         position: relative;
     }
 
-    .footer__options {
+
+
+    .chatboxContainer__chatInput__attachmentMenu {
         position: relative;
+        display: flex;
+        align-items: center;
 
         .icon {
             color: #8696a0;
@@ -31,7 +36,7 @@
         }
     }
 
-    .search {
+    .chatboxContainer__chatInput__searchInput {
         flex: 1;
         align-self: stretch;
 

@@ -32,9 +32,9 @@ const SearchBar = (props) => {
     }
 
     return (
-        <div className="chat-menu__search">
-            <div className="chat-menu__search__input">
-                <SearchIcon className='chat-menu__search__input__icon' />
+        <div className="sidebarContainer__searchBar">
+            <div className="sidebarContainer__searchBar__input">
+                <SearchIcon className='icon' />
                 <input
                     value={text}
                     type="text"
@@ -44,26 +44,26 @@ const SearchBar = (props) => {
                 {
                     text &&
                     <IoIosClose
-                        className='chat-menu__search__input__icon-clear'
+                        className='icon-clear'
                         onClick={handleClearInputSearch}
                     />}
             </div>
 
-            <div className="chat-menu__search__selector">
+            <div className="sidebarContainer__searchBar__selector">
                 <div
-                    className={1 === selectOption ? "chat-menu__search__selector__item--selected" : "chat-menu__search__selector__item"}
+                    className={1 === selectOption ? "sidebarContainer__searchBar__selector__item--selected" : "sidebarContainer__searchBar__selector__item"}
                     onClick={() => handleOptionSelected(1)}
                 >
                     <span>Tất cả</span>
                 </div>
                 <div
-                    className={2 === selectOption ? "chat-menu__search__selector__item--selected" : "chat-menu__search__selector__item"}
+                    className={2 === selectOption ? "sidebarContainer__searchBar__selector__item--selected" : "sidebarContainer__searchBar__selector__item"}
                     onClick={() => handleOptionSelected(2)}
                 >
                     <span>Chưa đọc</span>
                 </div>
                 <div
-                    className={3 === selectOption ? "chat-menu__search__selector__item--selected" : "chat-menu__search__selector__item"}
+                    className={3 === selectOption ? "sidebarContainer__searchBar__selector__item--selected" : "sidebarContainer__searchBar__selector__item"}
                     onClick={() => handleOptionSelected(3)}
                 >
                     <span>Nhóm</span>

@@ -1,11 +1,11 @@
-.chat-box__header {
+.chatboxContainer__chatHeader {
     display: flex;
     height: 60px;
     padding: 10px 25px;
     align-items: center;
     gap: 15px;
 
-    .chat-box__header__avatar {
+    .chatboxContainer__chatHeader__avatar {
         position: relative;
         display: flex;
         align-items: center;
@@ -34,7 +34,7 @@
         }
     }
 
-    .chat-box__header__name-status {
+    .chatboxContainer__chatHeader__name {
         color: #fff;
 
         h5 {
@@ -50,8 +50,7 @@
         }
     }
 
-    .chat-box__header__icons {
-        position: relative;
+    .chatboxContainer__chatHeader__icons {
         margin-left: auto;
         color: #a0abb2;
         display: flex;
@@ -61,6 +60,15 @@
         .icon {
             font-size: 28px;
             cursor: pointer;
+        }
+
+        .chatboxContainer__chatHeader__icons__menu {
+            position: relative;
+
+            .icon {
+                font-size: 28px;
+                cursor: pointer;
+            }
         }
     }
 }
